@@ -7,5 +7,7 @@ jobs:
   backup:
     runs-on: ubuntu-1
     steps:
+      - name: Check out your repo
+        uses: actions/checkout@v4
       - name: Run Ansible Playbook
         run: ansible-playbook -i ./hosts **.yml
