@@ -1,0 +1,10 @@
+name: Test
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  backup:
+    runs-on: ubuntu-1
+    steps:
+      - name: Run Ansible Playbook
+        run: ansible-playbook -i ./hosts **.yml
