@@ -1,0 +1,21 @@
+name: Test
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check out your repo
+        uses: actions/checkout@v4
+      - name: Setup node js
+        uses: actions/setup-node@v4
+      - name: Install Prettier
+        run: npm install prettier
+      - name: Check Format With Prettier
+        run: npx prettier -c **.yml
+      - name: Install Ansible
+        run: sudo apt install -y ansible
+      - name: Try to predict some of the changes that may occur
+        run: ansible-playbook -C **.yml
