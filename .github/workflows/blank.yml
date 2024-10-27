@@ -11,9 +11,9 @@ jobs:
       - name: Setup node js
         uses: actions/setup-node@v4
       - name: Install Prettier
-        run: npm install
+        run: npm install prettier
       - name: Check Format With Prettier
-	run: npx prettier -c **.yml
+        run: npx prettier -c **.yml
       - name: Install Ansible
         run: sudo apt install -y ansible
       - name: Try to predict some of the changes that may occur
