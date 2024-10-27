@@ -5,15 +5,7 @@
   connection: local
   tasks:
     - name: DISPLAYING THE RUNNING-CONFIG
-
       register: config
-
-
-
-
-
-
-
 
     - name: SAVE OUTPUT TO ./backups/
       copy:
